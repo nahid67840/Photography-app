@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <title>Ultimate Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <span>💬 Ultimate Chat App</span>
+      <button id="dark-toggle">🌙</button>
+    </div>
+
+    <div id="login-area">
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
+
+    <div id="chat-area" style="display: none;">
+      <div id="user-info"></div>
+      <div id="chat-box"></div>
+      <div id="image-preview"></div>
+      <input type="file" id="image-upload" />
+      <input type="text" id="message" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <audio id="ding" src="ding.mp3" preload="auto"></audio>
+  </div>
+  <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyC9wQDWz24qqXgVNka2_sbuGxd4...",
+  authDomain: "photography-ce787.firebaseapp.com",
+  projectId: "photography-ce787",
+  storageBucket: "photography-ce787.appspot.com",
+  messagingSenderId: "869568995810",
+  appId: "1:869568995810:web:a26af2d24e7e7507c5e02e",
+  measurementId: "G-DVLF58XX7G"
+};
+</script>
+<script>const firebaseConfig = {
+  apiKey: "AIzaSyC9wQDWz24qqXgVNka2_sbuGxd4nY6Eqyw",
+  authDomain: "photography-ce787.firebaseapp.com",
+  projectId: "photography-ce787",
+  storageBucket: "photography-ce787.appspot.com",
+  messagingSenderId: "869568995810",
+  appId: "1:869568995810:web:a26af2d24e7e75c5b099bb",
+  measurementId: "G-DVLF58XX7G"
+};
+firebase.initializeApp(firebaseConfig);</script>
+  <script src="script.js"></script>
+</body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js').then(() => {
+      console.log("✅ Service Worker Registered");
+    });
+  }
+</script>
+</html>
